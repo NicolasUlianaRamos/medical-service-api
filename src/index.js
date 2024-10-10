@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(express.json());
 
 // solve cors
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cors({ credentials: true, origin: "https://medical-service-liard.vercel.app/" }));
 
 // Public folder for images
 app.use(express.static("public"));
