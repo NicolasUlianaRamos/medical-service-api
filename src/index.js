@@ -16,6 +16,11 @@ const UserRoutes = require("./routes/UserRoutes.js");
 const OrsRoutes = require("./routes/OrsRoutes.js")
 
 app.use("/users", UserRoutes);
-app.use("/ors", OrsRoutes)
+app.use("/ors", OrsRoutes);
+
+// Server dont restart
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "Server Online" })
+})
 
 app.listen(5000);
