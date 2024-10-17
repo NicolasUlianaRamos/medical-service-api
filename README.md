@@ -84,3 +84,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
+For issues or contributions, please open an issue on the [GitHub repository](https://github.com/NicolasUlianaRamos/medical-service-api/issues).
