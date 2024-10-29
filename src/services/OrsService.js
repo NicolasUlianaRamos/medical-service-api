@@ -56,7 +56,7 @@ module.exports = class OrsService {
       contact: data.contact,
       address: data.address,
       phone: data.phone,
-      fax: data.fax,
+      cnpj: data.cnpj,
       email: data.email,
       dateCall: data.dateCall,
       duration: data.duration,

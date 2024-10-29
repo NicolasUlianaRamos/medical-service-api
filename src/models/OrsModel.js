@@ -27,7 +27,7 @@ const OrsModel = mongoose.model(
       phone: {
         type: String,
       },
-      fax: {
+      cnpj: {
         type: String,
       },
       email: {
