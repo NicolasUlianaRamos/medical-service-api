@@ -15,9 +15,6 @@ module.exports = class OrsService {
     if (!data.address) {
       throw new Error("Endereco é obrigatória");
     }
-    if (!data.equipment) {
-      throw new Error("Equipamento é obrigatório");
-    }
     if (!data.brand) {
       throw new Error("Marca é obrigatória");
     }
@@ -29,9 +26,6 @@ module.exports = class OrsService {
     }
     if (!data.accessories) {
       throw new Error("Acessórios são obrigatórios");
-    }
-    if (!data.observations) {
-      throw new Error("Observação é obrigatória");
     }
     if (!data.realizedServices) {
       throw new Error("Serviços realizados são obrigatórios");
@@ -61,6 +55,7 @@ module.exports = class OrsService {
       dateCall: data.dateCall,
       duration: data.duration,
       equipment: data.equipment,
+      local: data.local,
       brand: data.brand,
       model: data.model,
       serial: data.serial,

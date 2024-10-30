@@ -41,7 +41,9 @@ const OrsModel = mongoose.model(
       },
       equipment: {
         type: String,
-        required: true,
+      },
+      local: {
+        type: String
       },
       brand: {
         type: String,
@@ -67,7 +69,6 @@ const OrsModel = mongoose.model(
       },
       observations: {
         type: String,
-        required: true,
       },
       realizedServices: {
         type: String,
