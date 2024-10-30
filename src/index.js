@@ -6,8 +6,7 @@ const cors = require("cors");
 app.use(express.json());
 
 // solve cors
-//app.use(cors({ credentials: true, origin: "https://medical-service-red.vercel.app" }));
-app.use(cors());
+app.use(cors({ credentials: true, origin: "https://medical-service-red.vercel.app" }));
 
 // Public folder for images
 app.use(express.static("public"));
