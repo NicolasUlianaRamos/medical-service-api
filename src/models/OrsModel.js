@@ -61,8 +61,7 @@ const OrsModel = mongoose.model(
         required: true,
       },    
       accessories: {
-        type: String,
-        required: true,
+        type: String
       },
       problem: {
         type: String,
