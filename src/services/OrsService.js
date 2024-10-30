@@ -222,13 +222,99 @@ module.exports = class OrsService {
     return newOrs;
   }
 
-  static async updateOrs(id, status) {
-    const updatedData = {};
+  static async orsGet(req, res){
+    const { id } = req.params;
 
-    updatedData.status = status;
 
-    await OrsModel.findByIdAndUpdate(id, { status: status });
+    // check if ors exists
+    const ors = await OrsModel.findOne({_id: id})
 
-    return updatedData;
+    if(!ors){
+        throw new Error("ORS não encontrada")
+    }
+
+     // check if logged in user registered the pet
+    const token = getToken(req)
+    const user = await getUserByToken(token)
+
+    if(ors.idUser.toString() !== user._id.toString()){
+      throw new Error("Você não tem permissão para editar essa ORS")
+    }
+
+    return ors
+  }
+
+  static async updateOrs(req, res) {
+    const { id } = req.params;
+
+    const {
+      client,
+      contact,
+      address,
+      phone,
+      cnpj,
+      email,
+      dateCall,
+      duration,
+      equipment,
+      brand,
+      model,
+      serial,
+      inventoryNumber,
+      accessories,
+      problem,
+      observations,
+      realizedServices,
+      quantity,
+      descriptionOfParts,
+      dateDelivery,
+      status,
+    } = req.body;
+
+    
+    const data = {
+      client,
+      contact,
+      address,
+      phone,
+      cnpj,
+      email,
+      dateCall,
+      duration,
+      equipment,
+      brand,
+      model,
+      serial,
+      inventoryNumber,
+      accessories,
+      problem,
+      observations,
+      realizedServices,
+      quantity,
+      descriptionOfParts,
+      dateDelivery,
+      status,
+    };
+    
+    const updatedData = {}
+    
+    // check if ors exists
+    const ors = await OrsModel.findOne({_id: id})
+
+    if(!ors){
+        throw new Error("ORS não encontrada")
+    }
+
+     // check if logged in user registered the pet
+    const token = getToken(req)
+    const user = await getUserByToken(token)
+
+    if(ors.idUser.toString() !== user._id.toString()){
+      throw new Error("Você não tem permissão para editar essa ORS")
+    }
+
+    await OrsModel.findByIdAndUpdate(id, data)
+
+    return updatedData
   }
 };

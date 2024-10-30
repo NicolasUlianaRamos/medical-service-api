@@ -112,14 +112,22 @@ static async orsByUserId(req, res){
   
 }
 
+static async orsGet(req, res){
+  try {
+    const ors = await OrsService.orsGet(req, res);
+    res.status(200).json({ message: "Todas as ORS", ors: ors });
+  } catch (error) {
+    res.status(500).json({ message: "Erro interno ao buscar ORS", error: error.message });
+  }
+}
+
   static async updateOrs(req, res){
-    const { id } = req.params;
-    const { status } = req.body;
+    
 
     try {
-        const ors = await OrsService.updateOrs(id, status);
+        const ors = await OrsService.updateOrs(req, res);
         
-        res.status(200).json({ message: "ORS modificada com sucesso", ors: ors.status });
+        res.status(200).json({ message: "ORS modificada com sucesso", ors: ors });
       } catch (error) {
         res
           .status(500)

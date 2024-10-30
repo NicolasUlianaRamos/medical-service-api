@@ -13,5 +13,6 @@ router.get("/getall", verifyToken, UserController.getAllUsers)
 
 router.get("/checkuser", UserController.checkUser);
 router.get("/checkuserAdmin", verifyToken, UserController.checkUserAdmin)
+router.get("/checkOrsUser/:id", verifyToken, UserController.checkOrsUser)
 
 module.exports = router;

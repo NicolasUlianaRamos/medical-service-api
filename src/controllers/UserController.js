@@ -1,6 +1,7 @@
 const RegisterService = require("../services/RegisterService.js");
 const LoginService = require("../services/LoginService.js");
 const GetAllUsers = require("../services/GetAllUsersService.js");
+const CheckOrsUser = require("../services/CheckOrsUser.js")
 
 module.exports = class UserController {
   static async register(req, res) {
@@ -62,6 +63,16 @@ module.exports = class UserController {
       const response = await RegisterService.checkUserAdmin(req, res);
 
       res.status(200).json({ response });
+    } catch(err){
+      res.status(400).json({ message: "Erro ao visualizar a pagina", err: err.message })
+    }
+  }
+
+  static async checkOrsUser(req, res, next) {
+    try{
+      const response = await CheckOrsUser.checkOrsUser(req, res, next);
+      res.status(200).json({ response });
+
     } catch(err){
       res.status(400).json({ message: "Erro ao visualizar a pagina", err: err.message })
     }
