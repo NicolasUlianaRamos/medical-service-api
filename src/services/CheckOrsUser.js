@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 
 module.exports =  class CheckOrsUser {
-  async checkOrsUser(req, res, next) {
+  static async checkOrsUser(req, res, next) {
     const { id } = req.params;
 
     let currentOrs;
