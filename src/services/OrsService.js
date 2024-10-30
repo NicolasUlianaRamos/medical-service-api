@@ -24,9 +24,6 @@ module.exports = class OrsService {
     if (!data.inventoryNumber) {
       throw new Error("Número de inventário é obrigatório");
     }
-    if (!data.accessories) {
-      throw new Error("Acessórios são obrigatórios");
-    }
     if (!data.realizedServices) {
       throw new Error("Serviços realizados são obrigatórios");
     }
