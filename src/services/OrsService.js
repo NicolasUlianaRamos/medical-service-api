@@ -33,6 +33,12 @@ module.exports = class OrsService {
     if (!data.technicalSign) {
       throw new Error("Assinatura técnica é obrigatória");
     }
+    if(!data.nameTechSign){
+      throw new Error("Nome do técnico é obrigatório")
+    }
+    if(!data.nameClientSign){
+      throw new Error("Nome do cliente é obrigatório")
+    }
     if (!data.dateDelivery) {
       throw new Error("Data de entrega é obrigatória");
     }
