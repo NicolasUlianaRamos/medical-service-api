@@ -81,11 +81,9 @@ const OrsModel = mongoose.model(
       },
       technicalSign: {
         type: String,
-        required: true,
       },
       nameTechSign: {
         type: String,
-        required: true,
       },
       dateDelivery: {
         type: String,
@@ -93,11 +91,9 @@ const OrsModel = mongoose.model(
       },
       clientSign: {
         type: String,
-        required: true,
       },
       nameClientSign: {
         type: String,
-        required: true,
       },
       status: {
         type: String,
