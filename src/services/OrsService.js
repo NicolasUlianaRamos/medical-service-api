@@ -27,20 +27,8 @@ module.exports = class OrsService {
     if (!data.realizedServices) {
       throw new Error("Serviços realizados são obrigatórios");
     }
-    if (!data.technicalSign) {
-      throw new Error("Assinatura técnica é obrigatória");
-    }
-    if(!data.nameTechSign){
-      throw new Error("Nome do técnico é obrigatório")
-    }
-    if(!data.nameClientSign){
-      throw new Error("Nome do cliente é obrigatório")
-    }
     if (!data.dateDelivery) {
       throw new Error("Data de entrega é obrigatória");
-    }
-    if (!data.clientSign) {
-      throw new Error("Assinatura do cliente é obrigatória");
     }
 
     const token = getToken(req);
