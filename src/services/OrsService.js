@@ -266,7 +266,11 @@ module.exports = class OrsService {
       realizedServices,
       quantity,
       descriptionOfParts,
+      technicalSign,
+      nameTechSign,
       dateDelivery,
+      clientSign,
+      nameClientSign,
       status,
     } = req.body;
 
@@ -292,7 +296,11 @@ module.exports = class OrsService {
       realizedServices,
       quantity,
       descriptionOfParts,
+      technicalSign,
+      nameTechSign,
       dateDelivery,
+      clientSign,
+      nameClientSign,
       status,
     };
     
